@@ -112,4 +112,4 @@ client.on("guildMemberRemove", async member => {
   return client.channels.cache.get(Channel).send(Msg, Attachment);
 });
 
-client.login(Token).catch(() => console.log(`Invalid Token Is Provided - Please Give Valid Token!`));
+client.login(Token).catch(() => console.log(`Token Yanliş!`));
