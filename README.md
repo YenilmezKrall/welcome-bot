@@ -30,3 +30,4 @@ A Advanced Welcome Bot With Image Support (You Can Change Both: Welcome & Bye)
 Note: Please Make Sure You Know Basics Or I Will Report You :)
 
 - Author - Andrew
+- License - [Mit](https://github.com/YenilmezKrall/welcome-bot/blob/main/LICENSE)
