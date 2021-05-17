@@ -10,7 +10,7 @@ module.exports = {
   usage: "Setmessage <Type> <Message>",
   run: async (client, message, args) => {
     
-    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You Don't Have Enough Permission To Execute This Command - Manage Messages");
+    if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Bu Komutu Yürütmek İçin Yeterli izinlere Sahip değilsiniz - Mesajları Yönetmek");
     
     let Type = args[0];
     let Welcome = ["welcome", "wel", "join"];
@@ -27,7 +27,7 @@ module.exports = {
     
     if (!Msg) return message.channel.send(`Please Give Message\n\nCustom:\n<ServerName> => Server Name\n<MemberName> => Member Name\n<MemberMention> => Member Mention`);
     
-    if (Msg.length > 1000) return message.channel.send(`Too Long Message - Limit 1000`);
+    if (Msg.length > 1000) return message.channel.send(`Çok Uzun Mesaj-Limit 1000`);
     
     async function GetType(Type) {
       if (Welcome.find(W => W === Type)) {
@@ -42,7 +42,7 @@ module.exports = {
     const Embed = new Discord.MessageEmbed()
     .setColor(Color || "RANDOM")
     .setTitle(`Sucess`)
-    .setDescription(`${Current === "Welcome" ? "Welcome" : "Leave"} Message Has Been Setted -\n${Msg}`)
+    .setDescription(`${Current === "Welcome" ? "Welcome" : "Leave"} Mesaj Ayarlandı -\n${Msg}`)
     .setFooter(`Setted By ${message.author.username}`)
     .setTimestamp();
 
@@ -51,7 +51,7 @@ module.exports = {
     try {
         return message.channel.send(Embed);
     } catch (error) {
-        return message.channel.send(`${Current === "Welcome" ? "Welcome" : "Leave"} Message Has Been Setted -\n${Msg}`);
+        return message.channel.send(`${Current === "Welcome" ? "Welcome" : "Leave"} Mesaj Ayarlandı -\n${Msg}`);
     };
 
   }
