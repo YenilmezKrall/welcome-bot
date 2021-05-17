@@ -10,7 +10,7 @@ module.exports = {
   usage: "Setchannel <Mention Channel> <Type>",
   run: async (client, message, args) => {
     
-    if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("You Don't Have Enough Permission To Execute This Command - Manage Channels");
+    if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send("Bu Komutu Yürütmek İçin Yeterli izinlere Sahip değilsiniz - Kanal Yönetmek");
     
     let Channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
     
@@ -40,7 +40,7 @@ module.exports = {
     const Embed = new Discord.MessageEmbed()
     .setColor(Color || "RANDOM")
     .setTitle(`Sucess`)
-    .setDescription(`${Current === "Welcome" ? "Welcome" : "Leave"} Channel Has Been Setted - <#${Channel.id}>`)
+    .setDescription(`${Current === "Welcome" ? "Welcome" : "Leave"} Kanal Ayarlandı - <#${Channel.id}>`)
     .setFooter(`Setted By ${message.author.username}`)
     .setTimestamp();
 
@@ -49,7 +49,7 @@ module.exports = {
     try {
         return message.channel.send(Embed);
     } catch (error) {
-        return message.channel.send(`${Current === "Welcome" ? "Welcome" : "Leave"} Message Has Been Setted - <#${Channel}>`);
+        return message.channel.send(`${Current === "Welcome" ? "Welcome" : "Leave"} Mesaj Ayarlandı - <#${Channel}>`);
     };
 
   }
